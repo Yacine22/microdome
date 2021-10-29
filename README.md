@@ -33,7 +33,7 @@ The **pydome** package is composed of modules:
 
 ## Data Format
  
-This allows to take look to sata format after data acquisitions from embedded camera
+This allows to take look to data format after data acquisitions from embedded camera
 
 ## Hardware Description 
 
