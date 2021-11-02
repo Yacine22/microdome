@@ -2,7 +2,7 @@
  *This tests a serial communication between arduino nano / or attiny digispark device with Raspberry card*
 
 <div style="text-align: center">
-<img src="" alt="front image" width="500"/>
+<img src="serial.PNG" alt="front image" width="500"/>
 </div>
 
 ## Table of Contents
