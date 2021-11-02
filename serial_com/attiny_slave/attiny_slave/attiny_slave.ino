@@ -1,29 +1,29 @@
-#include <Wire.h>
+#include <TinyWire.h>
 #include <microdome.h>
 
 long dataReceived, dataSent;
 
 
 void setup() {
-  Wire.begin(0x44); 
+  
+  TinyWire.begin(0x44); 
 
   Serial.begin(115200); 
 
-  Wire.onReceive(receiveLong); 
-  Wire.onRequest(sendLong); 
+  TinyWire.onReceive( receiveLong ); 
+  TinyWire.onRequest( sendLong ); 
 }
 
 void loop() {
   
-
 }
 
 void receiveLong() {
   long bytes[sizeof(long)]; 
 
   byte index = 0;
-  while (Wire.available())
-    bytes[index++] = Wire.read(); 
+  while (TinyWire.available())
+    bytes[index++] = TinyWire.read(); 
 
   dataReceived = 0; 
   for (int j = 0; j < sizeof(long); ++j)
@@ -42,5 +42,6 @@ void sendLong(){
 
   Serial.print("Data sent: "); 
   Serial.println(dataSent);
+  TinyWire.send(bytes, sizeof(long)); 
   
 }
